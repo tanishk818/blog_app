@@ -1,0 +1,19 @@
+<%- include("partials/header") %>
+<link rel="stylesheet" href="/app.css">
+
+
+
+
+<% blogs.forEach(function(blog){ %>
+	<div class="blogs">
+		<h2 style="text-transform: capitalize"><%= blog.title  %></h2>
+		<img src="<%=blog.image %>">
+		<span><%= blog.created  %></span>
+		<p>
+			<%= blog.body.substring(0,100)  %>.....
+		</p>
+		<a href="/blogs/<%=blog._id %>">Show more</a>
+	</div>
+ <% })  %>
+
+<%- include("partials/footer") %>
